@@ -1,0 +1,10 @@
+.home{
+    background: url('../../images/gcbg.jpg') no-repeat center / cover;
+}
+.groceries{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:25px;
+    align-content: center;
+    margin-top: 10px;
+}

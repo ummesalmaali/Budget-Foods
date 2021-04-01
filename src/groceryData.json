@@ -1,0 +1,87 @@
+[
+    {
+        "id":0,
+        "name":"Bread per packet",
+        "price": 50,
+        "image": "https://i.ibb.co/1nd3S8J/Fresh-sliced-organic-homemade-bread-isolated-on-white-background.jpg"
+        
+    },
+    {
+        "id":1,
+        "name":"Dates per 1 kilo",
+        "price": 700,
+        "image": "https://i.ibb.co/6nBPrQy/dates.jpg"
+        
+    },
+    {
+        "id":2,
+        "name":"Honey per kilo",
+        "price": 500,
+        "image": "https://i.ibb.co/b1gb2JB/honey.jpg"
+        
+    },
+    {
+        "id":3,
+        "name":"Chicken per kilo",
+        "price": 350,
+        "image": "https://i.ibb.co/y4y9dtB/chicken.jpg"
+        
+    },
+    {
+        "id":4,
+        "name":"Pasta per packet",
+        "price": 65,
+        "image": "https://i.ibb.co/f4swt3q/pasta.jpg"
+        
+    },
+    {
+        "id":5,
+        "name":"Butter per kilo",
+        "price": 400,
+        "image": "https://i.ibb.co/8rZj0Sy/butter.jpg"
+        
+    },
+    {
+        "id":6,
+        "name":"Eggs",
+        "price": 25,
+        "image": "https://i.ibb.co/bHQ2xp1/egg.jpg"
+        
+    },
+    {
+        "id":7,
+        "name":"Oil and Fat five kilo",
+        "price": 550,
+        "image": "https://i.ibb.co/881cGCY/oil.png"
+        
+    },
+    {
+        "id":8,
+        "name":" Fresh Beef per kilo",
+        "price": 700,
+        "image": "https://i.ibb.co/bKfn53Q/beef.jpg"
+        
+    },
+    {
+        "id":9,
+        "name":"Fish The Sea FoodS PER KILO",
+        "price": 250,
+        "image": "https://i.ibb.co/SyNtjwp/fish.jpg"
+        
+    },
+    {
+        "id":10,
+        "name":"Milk 1 kilo",
+        "price": 70,
+        "image": "https://i.ibb.co/7WZKC0w/milk.jpg"
+        
+    },
+    {
+        "id":11,
+        "name":"Salt Bay per packet",
+        "price": 15,
+        "image": "https://i.ibb.co/jDms98B/salt.jpg"
+        
+    }
+    
+]

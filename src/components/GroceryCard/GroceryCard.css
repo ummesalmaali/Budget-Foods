@@ -1,0 +1,21 @@
+.grocery-img{
+    height: 300px;
+    width: 350px;
+}
+.grocery-card{
+ background: white;
+ padding: 20px;
+ border-radius: 10px;
+ display: block;
+ text-decoration: none;
+ color:initial;
+ text-align: center;
+ margin-top: 10px;
+}
+.grocery-name{
+
+}
+.price-btn{
+    display: flex;
+    margin-right: 50px;
+}
