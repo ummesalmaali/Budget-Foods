@@ -13,6 +13,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Transaction from './components/Transaction/Transaction';
 import Login from './components/Login/Login';
 import Orders from './components/Orders/Orders';
+import Admin from './components/Admin/Admin';
 
 function App() {
   const [user,setUser] = useState({});
@@ -36,6 +37,9 @@ function App() {
       </Route>
       <Route path='/orders'>
         <Orders></Orders>
+      </Route>
+      <Route path="/admins">
+        <Admin/>
       </Route>
       <Route exact path='/'>
           <Home/>
