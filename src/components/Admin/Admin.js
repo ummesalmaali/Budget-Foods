@@ -2,8 +2,13 @@ import React from 'react';
 
 const Admin = () => {
     return (
-        <div>
-            <h1>Here you will get the info of admins</h1>
+        <div className='d-flex ms 5 mt 5 mr 5' >
+            <div>
+            <button className="btn btn-primary" >EDIT</button>
+        </div>
+            <div>
+            <button className="btn btn-danger" >DELETE</button>
+        </div>
         </div>
     );
 };
