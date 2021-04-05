@@ -11,7 +11,7 @@ const Home = () => {
         setItem(newItem);
     }
     useEffect(() => {
-        fetch('https://warm-bayou-77500.herokuapp.com/foods')
+        fetch(`http://localhost:5000/foods`)
         .then(res => res.json())
         .then(data => setItem(data))
     }, [])

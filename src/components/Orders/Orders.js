@@ -1,10 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import groceryData from "../../groceryData.json";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const Orders = () => {
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [imageURL,setImageURL] = useState(null)
+  const onSubmit = (data) =>{
+      const eventData = {
+          name: data.name,
+          imageURL: imageURL
+      };
+      const url = `http://localhost:5000/addFood`
+       console.log(eventData);
+       fetch(url,{
+           method:'POST',
+           headers:{
+               'content-type' : 'application/json'
+           },
+           body:JSON.stringify(eventData)
+       })
+       .then(res => console.log('sever'))
+    };
+  const handleImageUpload = event => {
+    console.log(event.target.files[0]);
+    const imageData = new FormData();
+    imageData.set('key', '9163cc026e85aceb2cdb220b580cc7ca')
+    imageData.append('image', event.target.files[0])
+    axios.post('https://api.imgbb.com/1/upload',
+     imageData)
+      .then(function (response) {
+        setImageURL(response.data.data.display_url);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
 //   const handleAddFood = () => {
 //     // fetch("http://localhost:5000/addFood", {
@@ -23,7 +54,7 @@ const Orders = () => {
                                 <div className="mt-5">
                                     <div className="mb-3">
                                         <label for="name" className="form-label text-white">Product Name</label>
-                                        <input name="name" className="form-control" defaultValue="Product Name" {...register('exampleRequired')} />
+                                        <input name="name" className="form-control" defaultValue="add New Product" {...register('exampleRequired')} />
                                     </div>
                                     <div className="mb-3">
                                         <label for="weight" className="form-label text-white">Weight</label>
@@ -35,7 +66,7 @@ const Orders = () => {
                                     </div>
                                     <div className="mb-3">
                                         <label for="exampleRequired" className="form-label text-white">Choose a Picture</label>
-                                        <input name="exampleRequired"  className="form-control" type="file" />
+                                        <input name="exampleRequired"  className="form-control" type="file" onChange={handleImageUpload} />
                                     </div>
 
                                     <div className="mb-3 justify-content-center align-item-center d-flex">
