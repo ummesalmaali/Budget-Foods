@@ -12,10 +12,9 @@ const Admin = () => {
             setFoods(data)
         })
     },[])
-    const handleClick = (e, id) => {
+    const handleClick = (id) => {
         console.log('clicked');
         console.log(id);
-        console.log(e.target);
 
         fetch(`https://warm-bayou-77500.herokuapp.com/delete/${id}`,{
             method: 'DELETE',
@@ -28,7 +27,7 @@ const Admin = () => {
      <div className='container'>
             <div>
         {
-            foods.map(food => <li>{food._id} Name: {food.name} Price:{food.price} <button onClick={()=>handleClick(e,food._id)} className='btn-danger'>Delete</button></li>)
+            foods.map(food => <li>{food._id} Name: {food.name} Price:{food.price} <button onClick={()=>handleClick(food._id)} className='btn-danger'>Delete</button></li>)
         }
         </div>
      </div>
