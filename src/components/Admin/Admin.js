@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Admin = () => {
-    const handleDelete = () =>{
-        
+    const [foods,setFoods] = useState([])
+    useEffect(() => {
+        const url = `https://warm-bayou-77500.herokuapp.com/foods`
+
+        fetch(url)
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data);
+            setFoods(data)
+        })
+    },[])
+    const handleClick = (e, id) => {
+        console.log('clicked');
+        console.log(id);
+        console.log(e.target);
+
+        fetch(`https://warm-bayou-77500.herokuapp.com/delete/${id}`,{
+            method: 'DELETE',
+        })
+        .then((response) => response.json())
+        .then(data =>console.log(data));
+
     }
     return (
-        <div className='row'>
-            <div className="col-md-3">
-               <h3>Product Id</h3>
-            </div>
-            <div className="col-md-3">
-            <h3>Product Name</h3>
-            </div>
-            <div className="col-md-3">
-            <h3>Product Price</h3>
-            </div>
+     <div className='container'>
             <div>
-            <button className="btn btn-danger" >DELETE</button>
+        {
+            foods.map(food => <li>{food._id} Name: {food.name} Price:{food.price} <button onClick={()=>handleClick(e,food._id)} className='btn-danger'>Delete</button></li>)
+        }
         </div>
-        </div>
+     </div>
     );
 };
 

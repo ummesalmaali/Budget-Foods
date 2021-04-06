@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import groceryData from "../../groceryData.json";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -15,7 +14,7 @@ const Orders = () => {
           imageURL: imageURL
       };
       console.log(eventData)
-      const url = `http://localhost:5000/addFood`
+      const url = `https://warm-bayou-77500.herokuapp.com/addFood`
        console.log(eventData);
        fetch(url,{
            method:'POST',
@@ -24,7 +23,7 @@ const Orders = () => {
            },
            body:JSON.stringify(eventData)
        })
-       .then(res => console.log('sever'))
+       .then(res => console.log('server'))
     };
   const handleImageUpload = event => {
     console.log(event.target.files[0]);
@@ -42,7 +41,7 @@ const Orders = () => {
   }
 
 //   const handleAddFood = () => {
-//     // fetch("http://localhost:5000/addFood", {
+//     // fetch("https://warm-bayou-77500.herokuapp.com/addFood", {
 //     //   method: "POST",
 //     //   headers: {
 //     //     "Content-Type": "application/json",
@@ -52,7 +51,6 @@ const Orders = () => {
 //   };
   return (
     <div>
-        <h1>add your desired products here</h1>
         
          <form className=" justify-content-center align-item-center d-flex mt-5 bg-primary rounded" onSubmit={handleSubmit(onSubmit)}>
                                 <div className="mt-5">

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import './Transaction.css'
-import groceryData from '../../groceryData.json'
+
 import Home from '../Home/Home';
 import UserContext from '../../UserContext';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const Transaction = () => {
 
   const [user,setUser] = useContext(UserContext)
   useEffect(() => {
-    fetch(`http://localhost:5000/foods/${id}`)
+    fetch(`https://warm-bayou-77500.herokuapp.com/foods/${id}`)
     .then(res => res.json())
     .then(data => setItem(data[0]))
 }, [])

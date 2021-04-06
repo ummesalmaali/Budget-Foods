@@ -41,6 +41,7 @@ function App() {
       <Route path="/admins">
         <Admin/>
       </Route>
+      
       <Route exact path='/'>
           <Home/>
       </Route>

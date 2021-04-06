@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import groceryData from '../../groceryData.json';
 import GroceryCard from '../GroceryCard/GroceryCard';
 import Transaction from '../Transaction/Transaction';
 import './Home.css'
@@ -11,7 +10,7 @@ const Home = () => {
     //     setItem(newItem);
     // }
     useEffect(() => {
-        fetch('http://localhost:5000/foods')
+        fetch('https://warm-bayou-77500.herokuapp.com/foods')
         .then(res => res.json())
         .then(data => setItem(data))
     }, [])
