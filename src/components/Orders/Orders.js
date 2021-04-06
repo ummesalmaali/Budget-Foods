@@ -10,6 +10,8 @@ const Orders = () => {
       console.log(data);
       const eventData = {
           name: data.name,
+          weight: data.weight,
+          price: data.price,
           imageURL: imageURL
       };
       console.log(eventData)

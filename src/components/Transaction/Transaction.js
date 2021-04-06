@@ -7,18 +7,18 @@ import UserContext from '../../UserContext';
 import { Link } from 'react-router-dom';
 
 const Transaction = () => {
-    // const [ item,setItem] = useState([]);
+    const [ item,setItem] = useState([]);
 
   const {id} = useParams();
   console.log(id);
-  const grocery = groceryData.find(it=> it.id === id);
-  console.log(grocery);
+
   const [user,setUser] = useContext(UserContext)
-//   useEffect(() => {
-//     fetch('http://localhost:5000/foods')
-//     .then(res => res.json())
-//     .then(data => setItem(data))
-// }, [])
+  useEffect(() => {
+    fetch(`http://localhost:5000/foods/${id}`)
+    .then(res => res.json())
+    .then(data => setItem(data[0]))
+}, [])
+console.log(item);
   const handleAddFood = () =>{
     const newProduct = {...user}
   }
@@ -26,12 +26,12 @@ const Transaction = () => {
     return (
         
         <div className="container">
-                <div><h2>{id}Check Out</h2></div>
+                <div><h2>Check Out</h2></div>
                
             <div className='row'>
             <div className='col-md-6'>
             <h4 style={{color:'grey'}}>Description</h4>
-            <h3>Fresh Full Cream Milk purchased by :{user.name}</h3>
+            <h3>{item.name} purchased by :{user.name}</h3>
             </div>
             <div className='col-md-3'>
             <h4 style={{color:'grey'}}>Quantity</h4>
@@ -39,7 +39,7 @@ const Transaction = () => {
             </div>
             <div className='col-md-3'>
             <h4 style={{color:'grey'}}>Price</h4>
-            <h3>$50</h3>
+            <h3>{item.price}</h3>
             <h2>Total = $50</h2>
              <Link to='/orders'><button onClick={handleAddFood} className='btn-success'>Check Out</button></Link>
             </div>
