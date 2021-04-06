@@ -26,12 +26,12 @@ console.log(item);
     return (
         
         <div className="container">
-                <div><h2>Check Out</h2></div>
+                <div><h3>Check Out</h3></div>
                
             <div className='row'>
             <div className='col-md-6'>
             <h4 style={{color:'grey'}}>Description</h4>
-            <h3>{item.name} purchased by :{user.name}</h3>
+            <h3>{item.name} </h3>
             </div>
             <div className='col-md-3'>
             <h4 style={{color:'grey'}}>Quantity</h4>
@@ -40,7 +40,7 @@ console.log(item);
             <div className='col-md-3'>
             <h4 style={{color:'grey'}}>Price</h4>
             <h3>{item.price}</h3>
-            <h2>Total = $50</h2>
+            <h2>Total:{item.price} </h2>
              <Link to='/orders'><button onClick={handleAddFood} className='btn-success'>Check Out</button></Link>
             </div>
         </div>
