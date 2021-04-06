@@ -11,7 +11,7 @@ const Admin = () => {
             console.log(data);
             setFoods(data)
         })
-    },[])
+    },[foods])
     const handleClick = (id) => {
         console.log('clicked');
         console.log(id);
